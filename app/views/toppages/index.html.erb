@@ -1,8 +1,14 @@
+<% if logged_in? %>
+  <p>ログイン完了ユーザ: 
+    <%= current_user.name %>
+  </p>
+  
+<% else %>
 <div class="center jumbotron">
   <div class="text-center">
     <h1>走った距離を<br>
     記録・共有しよう</h1>
     <%= link_to '会員登録', signup_path %>
-
   </div>
 </div>
+<% end %>
