@@ -17,7 +17,7 @@
             <%= record.content %>km   
             <% if current_user == record.user %>
           </p>
-          <%= link_to "Delete", record, method: :delete, data: { confirm: "本当に削除しますか？" }, class: 'btn btn-danger btn-sm' %>
+          <%= link_to "削除", record, method: :delete, data: { confirm: "本当に削除しますか？" }, class: 'btn btn-danger btn-sm' %>
           <% end %>
         </div>
     
