@@ -14,5 +14,11 @@
   </aside>
   
   <div class="col-sm-8">
+    <ul class="nav nav-tabs nav-justified mb-3">
+      <li class="nav-item"><a href="<%= user_path(@user) %>" class="nav-link">記録</a></li>
+    </ul>
+    <div class="col-sm-8 offset-sm-2">
+      <%= render 'records/records', records: @records %>
+    </div>
   </div>
 </div>

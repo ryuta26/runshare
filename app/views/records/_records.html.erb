@@ -1,0 +1,33 @@
+<ul class="list-unstyled">
+  <% records.each do |record| %>
+    <li class="media mb-3">
+      <img class="mr-2 rounded" src="<%= gravatar_url(record.user, { size: 50 }) %>" alt="">
+      <div class="media-body">
+        <div>
+          <%= link_to record.user.name, user_path(record.user) %>
+          <span class="text-muted">posted at 
+           <%= record.created_at %>
+          </span>
+        </div>
+        <div>
+          <p>
+            <%= record.date %> 
+          </p>
+          <p>
+            <%= record.content %>km   
+            <% if current_user == record.user %>
+          </p>
+          <%= link_to "Delete", record, method: :delete, data: { confirm: "本当に削除しますか？" }, class: 'btn btn-danger btn-sm' %>
+          <% end %>
+        </div>
+    
+          
+      </div>
+    </li>
+  
+<% end %>
+
+  
+<%= paginate records %>
+
+</ul>
