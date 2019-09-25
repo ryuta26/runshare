@@ -1,0 +1,36 @@
+<div class="row">
+  <aside class="col-sm-5">
+    <div class="card mb-4">
+      <div class="card-header">
+        <h3 class="card-title">
+          <%= @user.name %>
+        </h3>
+      </div>
+      <div class="card-body">
+        <img class="rounded img-fluid" src="
+        <%= gravatar_url(@user, { size: 400 }) %>" alt="">
+      </div>
+    </div>
+    
+  </aside>
+  
+  <div class="col-sm-7">
+    <ul class="nav nav-tabs nav-justified mb-3">
+      <li class="nav-item"><a href="<%= user_path(@user) %>" class="nav-link<%= 'active' if current_page?(user_path(@user)) %>">記録</a></li>
+      <li class="nav-item"><a href="<%= graphs_path(@user)%>" class="nav-link<%= 'active' if current_page?(graphs_path(@user)) %>">トータル</a></li>
+      
+    </ul>
+    <div class="col-sm-8 offset-sm-2 mt-4">
+      <div class="mb-5">
+      <h2>累計走行距離：
+      <%= @sum_contents %>km
+      </h2>
+      <h2>月間走行距離：
+      <%= @sum_month_contents %>km
+      </h2>
+      </div>
+        <canvas id="myChart"  height="300"></canvas>
+        <script>draw_graph();</script>
+    </div>
+  </div>
+</div>

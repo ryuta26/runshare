@@ -60,3 +60,6 @@ gem 'kaminari'
 group :production do
   gem 'pg', '>= 0.18', '< 2.0'
 end
+
+gem 'chart-js-rails', '~> 0.1.4'
+gem 'gon', '~> 6.2.0'
