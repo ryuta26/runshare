@@ -14,12 +14,18 @@
             <%= record.date %> 
           </p>
           <p>
-            <%= record.content %>km   
-            <% if current_user == record.user %>
+            <%= record.content %>km
           </p>
+          <div class="height 100px, width 100px mb-2">
+            <% if record.img? %>
+              <%= image_tag record.img.url, :size =>'300x170' %>
+            <% end %>
+          </div>
+            <% if current_user == record.user %>
+          
           <%= link_to "削除", record, method: :delete, data: { confirm: "本当に削除しますか？" }, class: 'btn btn-danger btn-sm' %>
           <%= link_to"編集", edit_record_path(record), class: 'btn btn-primary btn-sm' %>
-          <% end %>
+            <% end %>
         </div>
     
           

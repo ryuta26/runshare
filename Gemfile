@@ -63,3 +63,5 @@ end
 
 gem 'chart-js-rails', '~> 0.1.4'
 gem 'gon', '~> 6.2.0'
+
+gem 'carrierwave'
