@@ -4,6 +4,7 @@
     <h2>記録を編集</h2>
     </div>
       <%= form_with(model: @record, local: true) do |f| %>
+      <%= render 'layouts/error_messages', model: f.object %>
       <div class="form-group">
         <label>走った日付</label>
         <%= f.date_field :date, class: 'form-control' %>
