@@ -6,3 +6,7 @@ ja:
       record:
         date: 日付
         content: 距離
+      user:
+        name: ニックネーム
+        email: メールアドレス
+        password: パスワード
