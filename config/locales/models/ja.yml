@@ -1,0 +1,8 @@
+ja:
+  activerecord:
+    models:
+      record:
+    attributes:
+      record:
+        date: 日付
+        content: 距離

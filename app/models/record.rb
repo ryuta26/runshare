@@ -8,7 +8,7 @@ class Record < ApplicationRecord
 
 def date_cannot_be_in_the_future
   if date.present? && date > Date.today
-    errors.add(:date, ": 未来の日付は使用できません")
+    errors.add(:date, "：未来の日付は使用できません")
   end
 end
   
