@@ -5,6 +5,7 @@
       <div class="media-body">
         <div>
           <%= link_to record.user.name, user_path(record.user) %>
+          <%= record.user.id %>
           <span class="text-muted">posted at 
            <%= record.created_at %>
           </span>

@@ -45,7 +45,6 @@ class UsersController < ApplicationController
     gon.bardata <<  @records = @user.records.sum(:content)  
     gon.bardata << @user.records::where(date: month_from...month_to).sum(:content)
     gon.bardata << @user.records::where(date: week_from...week_to).sum(:content)
-    gon.linedata << @records = @user.records
   end
     
 
