@@ -21,7 +21,7 @@
       
         <%= f.submit '投稿', class: 'btn btn-primary btn-block' %>
       <% end %>
-        
+
       
     <div class="mb-4 mt-5">
       <h3>投稿一覧</h3>
@@ -30,7 +30,6 @@
       <%= render 'records/records', records: @records %>
     </div>
   </div>
-
 <% else %>
 <div class="center jumbotron">
   <div class="text-center">
@@ -44,6 +43,20 @@
         ・
         <%= link_to 'ログイン', login_path %>
       </h2>
+  </div>
+</div>
+<div class="row text-center">
+  <div class="col-sm-6">
+    <h3>写真とともに走った距離を記録・共有</h3>
+   <img src="https://i.gyazo.com/1292f26bfaea9420165a6fec9406f460.png" alt="Image from Gyazo" width="468" height"330"/>
+    <p>日付や走った距離だけでなく写真として風景も一緒に共有できます。</p>
+  </div>
+  <div class="col-sm-6">
+    <h3>走行距離をグラフで表示</h3>
+    <div class="mt-3">
+    <img src="https://i.gyazo.com/41ba4372a9f8d783f3113b8ed1dcfa7e.png" alt="Image from Gyazo" width="500" height="330"/>
+    <p>累計・月間・週間走行距離をグラフで確認できます。</p>
+    </div>
   </div>
 </div>
 <% end %>

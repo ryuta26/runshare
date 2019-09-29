@@ -31,14 +31,21 @@ class UsersController < ApplicationController
   end
   
   def graph
-        @user = User.find(params[:id])
-        @sum_contents = @user.records.sum(:content)
-      to = Date.today.next_month.beginning_of_month
-      from = Date.today.beginning_of_month
-    @sum_month_contents = @user.records::where(date: from...to).sum(:content)
-    gon.data = []
-    gon.data <<  @records = @user.records.sum(:content)  
-    gon.data << @user.records::where(date: from...to).sum(:content)
+      @user = User.find(params[:id])
+      @sum_contents = @user.records.sum(:content)
+      month_to = Date.today.next_month.beginning_of_month
+      month_from = Date.today.beginning_of_month
+      @sum_month_contents = @user.records::where(date: month_from...month_to).sum(:content)
+      week_to = Date.today.next_week.beginning_of_week
+      week_from = Date.today.beginning_of_week
+      @sum_week_contents = @user.records::where(date: week_from...week_to).sum(:content)
+    gon.bardata = []
+    gon.linedata = []
+    
+    gon.bardata <<  @records = @user.records.sum(:content)  
+    gon.bardata << @user.records::where(date: month_from...month_to).sum(:content)
+    gon.bardata << @user.records::where(date: week_from...week_to).sum(:content)
+    gon.linedata << @records = @user.records
   end
     
 

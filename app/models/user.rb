@@ -6,6 +6,6 @@ class User < ApplicationRecord
                     uniqueness: { case_sensitive: false }
   has_secure_password
   has_many :records
-  
-
+  has_many :contents
+  belongs_to :user
 end
