@@ -3,6 +3,7 @@ class Record < ApplicationRecord
   mount_uploader :img, ImgUploader
   validates :content, presence: true, numericality: true, length: { maximum: 50 }
   validates :date, presence: true
+  validates :comment, length: { maximum: 50 }
   
    validate :date_cannot_be_in_the_future
 

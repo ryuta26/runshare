@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :require_user_logged_in, only: [:index, :show]
+  before_action :correct_user, only: [:update, :edit]
     
   def index
     @users = User.order(id: :desc).page(params[:page]).per(10)
@@ -47,9 +48,31 @@ class UsersController < ApplicationController
     gon.bardata << @user.records::where(date: week_from...week_to).sum(:content)
   end
     
+    def edit
+      @user = User.find(params[:id])
+    end
+  
+  def update
+    @user = User.find(params[:id])
+    
+
+    if @user.update(user_params)
+      flash[:success] = 'プロフィールは正常に更新されました'
+      redirect_to @user
+    else
+      flash.now[:danger] = 'プロフィールは更新されませんでした'
+      render :edit
+    end
+  end
 
   private
   def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation, :birthday, :profile)
   end
+
+  def correct_user
+      @user = User.find(params[:id])
+      redirect_to(root_url) unless @user == current_user 
+  end
+  
 end

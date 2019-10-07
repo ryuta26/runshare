@@ -22,6 +22,9 @@
               <%= image_tag record.img.url, :size =>'300x170' %>
             <% end %>
           </div>
+          <p>
+            <%= record.comment %>
+          </p>
             <% if current_user == record.user %>
           
           <%= link_to "削除", record, method: :delete, data: { confirm: "本当に削除しますか？" }, class: 'btn btn-danger btn-sm' %>

@@ -7,11 +7,21 @@
         </h3>
       </div>
       <div class="card-body">
+        <div class="mb-3">
         <img class="rounded img-fluid" src="
         <%= gravatar_url(@user, { size: 400 }) %>" alt="">
+        </div>
+        <p>ユーザーID：&nbsp;<%= @user.id %></p>
       </div>
     </div>
-
+    <h3>生年月日：
+    <%= @user.birthday %>
+    </h3>
+    <h3>プロフィール：
+      <%= @user.profile %>
+    </h3>
+    
+<%= link_to"編集", edit_user_path(@user), class: 'btn btn-primary btn-sm' %>
   </aside>
   
   <div class="col-sm-7">

@@ -8,6 +8,6 @@ Rails.application.routes.draw do
   
   get 'signup', to: 'users#new'
   get 'graphs/:id', to: 'users#graph',as: 'graphs'
-  resources :users, only: [:index, :show, :new, :create]
+  resources :users, only: [:index, :show, :new, :create, :edit, :update]
   resources :records, only: [:create, :destroy, :update, :edit]
 end

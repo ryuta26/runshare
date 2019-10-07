@@ -11,14 +11,16 @@
       </div>
       <div class="form-group">
         <label>走った距離（km）</label>
-        <%= f.text_field :content, class: 'form-control', :placeholder => "半角数字"  %>
+        <%= f.text_field :content, class: 'form-control', :placeholder => "半角数字" %>
       </div>
       <div class="form-group">
         <label>写真</label>
            <%= f.file_field :img, id: :record_img %>
-           
       </div>
-      
+      <div class="form-group">
+        <label>コメント</label>
+        <%= f.text_area :comment, class: 'form-control' %>
+      </div>
         <%= f.submit '投稿', class: 'btn btn-primary btn-block' %>
       <% end %>
 

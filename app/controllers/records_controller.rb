@@ -38,7 +38,7 @@ class RecordsController < ApplicationController
   private
 
   def record_params
-    params.require(:record).permit(:content, :date, :img, :remove_img)
+    params.require(:record).permit(:content, :date, :img, :remove_img, :comment)
   end
   
   def correct_user

@@ -6,4 +6,12 @@ class User < ApplicationRecord
                     uniqueness: { case_sensitive: false }
   has_secure_password
   has_many :records
+  
+  validate :birthday_cannot_be_in_the_future
+  
+  def birthday_cannot_be_in_the_future
+    if birthday.present? && birthday.future?
+      errors.add(:birthday, "：未来の日付は使用できません")
+    end
+  end
 end

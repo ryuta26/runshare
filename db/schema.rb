@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_25_042410) do
+ActiveRecord::Schema.define(version: 2019_10_07_023424) do
 
   create_table "records", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.date "date"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2019_09_25_042410) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "img"
+    t.string "comment"
     t.index ["user_id"], name: "index_records_on_user_id"
   end
 
@@ -28,6 +29,8 @@ ActiveRecord::Schema.define(version: 2019_09_25_042410) do
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.date "birthday"
+    t.string "profile"
   end
 
   add_foreign_key "records", "users"
