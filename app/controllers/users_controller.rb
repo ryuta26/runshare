@@ -54,6 +54,7 @@ class UsersController < ApplicationController
   
   def update
     @user = User.find(params[:id])
+    @birthday = @user.birthday
     
 
     if @user.update(user_params)
